@@ -1,3 +1,5 @@
+import LinkList from "@/components/LinkList";
+
 const profile = {
   name: "김개발",
   bio: "풀스택 개발자 | 요즘에는 AI 개발에 관심이 많아요",
@@ -34,21 +36,7 @@ export default function Home() {
           {profile.bio}
         </p>
 
-        <ul className="mt-12 w-full flex flex-col gap-4">
-          {links.map((link) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-2 w-full rounded-2xl border border-white/60 bg-white/55 backdrop-blur-md py-4 px-5 text-[15px] font-medium text-stone-800 shadow-[0_8px_24px_-12px_rgba(120,70,30,0.25)] transition duration-200 ease-out hover:bg-white/75 hover:-translate-y-[1px] hover:shadow-[0_12px_28px_-12px_rgba(120,70,30,0.35)]"
-              >
-                <span className="text-base">{link.emoji}</span>
-                <span>{link.label}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <LinkList links={links} />
       </div>
     </main>
   );
